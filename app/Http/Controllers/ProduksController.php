@@ -16,7 +16,7 @@ class produksController extends Controller
      */
     public function index()
     {
-        // $produks = Produk::all();
+        $produks = Produk::all();
         confirmDelete('Delete', 'yakin?');
         return view('admin.produk.index', compact('produks'));
 

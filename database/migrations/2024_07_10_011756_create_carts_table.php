@@ -14,15 +14,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('carts', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('produk_id');
-            $table->integer('qty');
-            $table->timestamps();
+    $table->id();
+    $table->unsignedBigInteger('user_id');
+    $table->unsignedBigInteger('produk_id');
+    $table->integer('qty');
+    $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('produk_id')->references('id')->on('produks')->onDelete('cascade');
-        });
+    $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+    $table->foreign('produk_id')->references('id')->on('produks')->onDelete('cascade');
+});
+
     }
 
     /**

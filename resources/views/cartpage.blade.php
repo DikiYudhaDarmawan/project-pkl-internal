@@ -23,8 +23,7 @@
       <!-- breadcrumb-area-end -->
           
       <!-- cart area -->
-      @foreach ( $cart as $data )
-         
+
       <section class="cart-area pt-80 pb-80 wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
          <div class="container">
             <div class="row">
@@ -49,7 +48,7 @@
                                        </a>
                                     </td>
                                     <td class="product-name">
-                                       <a href="shop-details.html">Evo Lightweight Granite Chair</a>
+                                       <a href="shop-details.html">{{ asset('image/produk/'.$produks->cover)}}</a>
                                     </td>
                                     <td class="product-price">
                                        <span class="amount">$130.00</span>
@@ -65,7 +64,7 @@
                                     <td class="product-remove">
                                        <a href="#"><i class="fa fa-times"></i></a>
                                     </td>
-                                    @endforeach
+                                   
                                  </tr>
                               </tbody>
                         </table>
