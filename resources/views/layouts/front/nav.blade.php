@@ -4,7 +4,7 @@
                 <div class="row align-items-center">
                     <div class="col-xl-2 col-lg-3">
                         <div class="logo">
-                            <a href="ind ex.html"><img src="assets/img/logo/logo.png" alt="logo"></a>
+                            <a href="ind ex.html"><img src="{{asset('front/assets/images/logo.png')}}" width="200" height="60" alt="logo"></a>
                         </div>
                     </div>
                     <div class="col-xl-10 col-lg-9">
@@ -22,7 +22,59 @@
                                     <button class="header-cart p-relative tp-cart-toggle">
                                         <i class="fal fa-shopping-cart"></i>
                                     </button>
-                                    <a href="sign-in.html"><i class="fal fa-user"></i></a>
+                                    <ul class="navbar-nav flex-row align-items-center ms-auto">
+            <!-- Place this tag where you want the button to render. -->
+
+            <!-- User -->
+            <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                <a class="nav-link dropdown-toggle hide-arrow p-0" href="javascript:void(0);" data-bs-toggle="dropdown">
+                    <div class="avatar avatar-online">
+                        <i class="fal fa-user"></i>
+                    </div>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end mt-3 py-2">
+                    <li>
+                        <a class="dropdown-item pb-2 mb-1" href="#">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1">
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <div class="dropdown-divider my-1"></div>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <i class="mdi mdi-account-outline me-1 mdi-20px"></i>
+                            <span class="align-middle">My Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <i class="mdi mdi-cog-outline me-1 mdi-20px"></i>
+                            <span class="align-middle">Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <div class="dropdown-divider my-1"></div>
+                    </li>
+                    <li>
+                        
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                            <i class="mdi mdi-power me-1 mdi-20px"></i>
+                            <span class="align-middle">Log Out</span>
+                        </a>
+                        <form action="{{ route('logout') }}" method="POST" id="logout-form">
+                            @csrf
+                        </form>
+                    </li>
+                </ul>
+            </li>
+            <!--/ User -->
+        </ul>
                                     <a href="wishlist.html"><i class="fal fa-heart"></i></a>
                                 </div>
                             </div>

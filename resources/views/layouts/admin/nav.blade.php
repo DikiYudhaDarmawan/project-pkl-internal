@@ -23,7 +23,7 @@
                 <a class="github-button"
                     href="https://github.com/themeselection/materio-bootstrap-html-admin-template-free"
                     data-icon="octicon-star" data-size="large" data-show-count="true"
-                    aria-label="Star themeselection/materio-bootstrap-html-admin-template-free on GitHub">Star</a>
+                    aria-label="">{{ Auth::user()->name }}</a>
             </li>
 
             <!-- User -->
@@ -44,7 +44,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-grow-1">
-                                    {{-- <h6 class="mb-0">{{ Auth::user()->name }}</h6> --}}f
+                                    <h6 class="mb-0">{{ Auth::user()->name }}</h6>
                                     <small class="text-muted">Admin</small>
                                 </div>
                             </div>

@@ -57,7 +57,11 @@
                            <span class="cart-plus"><i class="far fa-plus"></i></span>
                         </div>
                         <div class="tpproduct-details__cart ml-20">
-                           <button><i class="fal fa-shopping-cart"></i> Add To Cart</button>
+                           <form action="/cart/store" method="POST">
+                              @csrf
+                              <input type="hidden" value="{{$produks->id}}" name="produk_id">
+                              <input type="submit" class="btn btn-danger" value="add to car">
+                           </form>
                         </div>
                         <div class="tpproduct-details__wishlist ml-20">
                            <a href="#"><i class="fal fa-heart"></i></a>

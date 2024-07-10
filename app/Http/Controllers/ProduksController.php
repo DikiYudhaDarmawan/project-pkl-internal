@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Alert;
 use App\Models\Kategori;
-use App\Models\produk;
+use App\Models\Produk;
 use Illuminate\Http\Request;
 
 class produksController extends Controller
@@ -16,7 +16,7 @@ class produksController extends Controller
      */
     public function index()
     {
-        $produks = produk::all();
+        // $produks = Produk::all();
         confirmDelete('Delete', 'yakin?');
         return view('admin.produk.index', compact('produks'));
 

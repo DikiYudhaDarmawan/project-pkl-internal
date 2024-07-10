@@ -153,7 +153,7 @@
                </div>
             </div>
          </section>
-         <!-- category-area-end -->
+         <!-- category-area-end --> 
 
     <!-- product-area-start -->
     <section class="product-area pt-95 pb-70">
