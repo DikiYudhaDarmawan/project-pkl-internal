@@ -33,11 +33,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
 Route::get('/', [FrontController::class, 'index']);
 Route::get('shopdetail/{id}', [FrontController::class, 'show',]);
-Route::get('cartpage', [FrontController::class, 'cartpage']);
+Route::get('cartpage', [CartController::class, 'index']);
 Route::get('checkout', [FrontController::class, 'checkout']);
+Route::get('about', [FrontController::class, 'about']);
 
 Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('cart.add');
-Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::post('/cart/update/{id}', [CartController::class, 'update'])->name('cart.update');
 Route::delete('/cart/delete/{id}', [CartController::class, 'delete'])->name('cart.delete');
 Route::delete('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');

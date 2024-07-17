@@ -32,7 +32,7 @@
                     <tbody class="table-border-bottom-0">
                         @php $i=1; @endphp
                         @foreach ($users as $data)
-                            @if ($loop->first)
+                            @if ($data->isAdmin == 1)
                                       <tr>
                             <td>{{ $i++ }}</td>
                             <td>{{ $data->name }}</td>

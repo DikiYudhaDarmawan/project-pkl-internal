@@ -48,7 +48,21 @@
                         <div class="tpproduct-details__pera">
                             <p>{{$produks->deskripsi}}  <br>Buy it at the best price.</p>
                         </div>
-                        <form action="{{route('cart.add', $produks->id)}}" method="POST">
+                        @guest
+                         <form action="{{route('login')}}">
+                            <div class="tpproduct-details__count d-flex align-items-center flex-wrap mb-25">
+                                <div class="tpproduct-details__quantity">
+                                    <span class="cart-minus"><i class="far fa-minus"></i></span>
+                                    <input class="tp-cart-input" type="text" value="1" name="qty">
+                                    <span class="cart-plus"><i class="far fa-plus"></i></span>
+                                </div>
+                                <div class="tpproduct-details__cart ml-20">
+                                    <input type="submit" class="btn btn-danger" value="Add to Cart">
+                                </div>
+                            </div>
+                        </form>
+                            @else
+                        <form action="{{route('cart.add', $produks->id)}}" method="POST" >
                             @csrf
                             <div class="tpproduct-details__count d-flex align-items-center flex-wrap mb-25">
                                 <div class="tpproduct-details__quantity">
@@ -61,6 +75,7 @@
                                 </div>
                             </div>
                         </form>
+                        @endguest
                         <div class="tpproductdot mb-30">
                             <a class="tpproductdot__variationitem" href="#">
                                 <div class="tpproductdot__termshape">

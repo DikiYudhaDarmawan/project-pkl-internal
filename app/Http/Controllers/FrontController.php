@@ -18,15 +18,14 @@ class FrontController extends Controller
         $produks = Produk::findOrFail($id);
         return view('shopdetail', compact('produks'));
     }
-    public function cartpage()
-    {
-        $cartItems = Cart::where('user_id', Auth::id())->with('produks')->get();
-        return view('cartpage', compact('cartItems'));
-    }
 
     public function checkout()
     {
         return view('checkout');
+    }
+    public function about()
+    {
+        return view('about');
     }
     
 

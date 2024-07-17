@@ -27,7 +27,7 @@
 
             <!-- User -->
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                <a class="nav-link dropdown-toggle hide-arrow p-0" href="javascript:void(0);" data-bs-toggle="dropdown">
+                <a class="nav  hide-arrow p-0" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
                         <i class="fal fa-user"></i>
                     </div>
@@ -39,21 +39,6 @@
                                 <div class="flex-grow-1">
                                 </div>
                             </div>
-                        </a>
-                    </li>
-                    <li>
-                        <div class="dropdown-divider my-1"></div>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <i class="mdi mdi-account-outline me-1 mdi-20px"></i>
-                            <span class="align-middle">My Profile</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <i class="mdi mdi-cog-outline me-1 mdi-20px"></i>
-                            <span class="align-middle">Settings</span>
                         </a>
                     </li>
                     <li>
@@ -75,7 +60,6 @@
             </li>
             <!--/ User -->
         </ul>
-                                    <a href="wishlist.html"><i class="fal fa-heart"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -124,7 +108,7 @@
                                        
 
                                         <li class="has">
-                                            <a href="about.html">About</a>
+                                            <a href="{{url('about')}}">About</a>
                                         </li>
                                     </ul>
                                 </nav>

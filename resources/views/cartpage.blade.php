@@ -2,7 +2,7 @@
 @section('content')
 
 <!-- main-area-start -->
-   <main>
+  <main>
 
       <!-- breadcrumb-area -->
       <section class="breadcrumb__area pt-60 pb-60 tp-breadcrumb__bg" data-background="{{asset('front/assets/images/1.jpg')}}">
@@ -23,68 +23,67 @@
       <!-- breadcrumb-area-end -->
           
       <!-- cart area -->
-
       <section class="cart-area pt-80 pb-80 wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
          <div class="container">
-            <div class="row">
-               <div class="col-12">
-                  <form action="#">
-                     <div class="table-content table-responsive">
-                        <table class="table">
-                              <thead>
-                                 <tr>
-                                    <th class="product-thumbnail">Images</th>
-                                    <th class="cart-product-name">Courses</th>
-                                    <th class="product-price">Unit Price</th>
-                                    <th class="product-quantity">Quantity</th>
-                                    <th class="product-subtotal">Total</th>
-                                    <th class="product-remove">Remove</th>
-                                 </tr>
-                              </thead>
-                              <tbody>
+         <div class="row">
+            <div class="col-12">
+               <form action="#">
+                  <div class="table-content table-responsive">
+                     <table class="table">
+                        <thead>
+                           <tr>
+                              <th class="product-thumbnail">Images</th>
+                              <th class="cart-product-name">Courses</th>
+                              <th class="product-price">Unit Price</th>
+                              <th class="product-quantity">Quantity</th>
+                              <th class="product-subtotal">Total</th>
+                              <th class="product-remove">Remove</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                                 @foreach ($cartItems as $data )     
                                  <tr>
                                     <td class="product-thumbnail">
-                                       <a href="shop-details.html"><img src="assets/img/product/home-three/product-60.jpg" alt="">
+                                       <a href="shop-details.html"><img src="{{asset('image/produk/'.$data->produk->cover)}}" alt="">
                                        </a>
                                     </td>
                                     <td class="product-name">
-                                       <a href="shop-details.html">{{ asset('image/produk/'.$produks->cover)}}</a>
+                                       <a href="shop-details.html">{{$data->produk->nama_produk}}</a>
                                     </td>
                                     <td class="product-price">
-                                       <span class="amount">$130.00</span>
+                                       <span class="amount">Rp.{{$data->produk->harga}}</span>
                                     </td>
-                                    <td class="product-quantity">
+                                    @csrf
+                                    <form action="{{ route('cart.update', $data->id) }}" method="POST">
+                                       <td class="product-quantity">
                                           <span class="cart-minus">-</span>
-                                          <input class="cart-input" type="text" value="1"/>
+                                          <input class="cart-input" type="text" value="{{$data->qty}}" name="qty"/>
                                           <span class="cart-plus">+</span>
+                                       </form>
                                     </td>
                                     <td class="product-subtotal">
-                                       <span class="amount">$130.00</span>
+                                       <span class="amount">Rp.{{$data->sub_total}}</span>
                                     </td>
                                     <td class="product-remove">
-                                       <a href="#"><i class="fa fa-times"></i></a>
+                                        <form action="{{ route('cart.delete', $data->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn-remove">
+                                            <i class="fal fa-times"></i>
+                                        </button>
+                                    </form>
                                     </td>
-                                   
                                  </tr>
+                                 @endforeach
                               </tbody>
                         </table>
-                     </div>
-                     <div class="row">
-                        <div class="col-12">
-                              <div class="coupon-all">
-                                 <div class="coupon2">
-                                    <button class="tp-btn tp-color-btn banner-animation" name="update_cart" type="submit">Update cart</button>
-                                 </div>
-                              </div>
-                        </div>
                      </div>
                      <div class="row justify-content-end">
                         <div class="col-md-5 ">
                               <div class="cart-page-total">
                                  <h2>Cart totals</h2>
                                  <ul class="mb-20">
-                                    <li>Subtotal <span>$250.00</span></li>
-                                    <li>Total <span>$250.00</span></li>
+                                    <li>Total <span>Rp.{{$total}}</span></li>
                                  </ul>
                                  <a href="{{url('checkout')}}" class="tp-btn tp-color-btn banner-animation">Proceed to Checkout</a>
                               </div>
@@ -96,6 +95,11 @@
          </div>
       </section>
       <!-- cart area end-->
+
+      </main>
+
+          
+    
 
       </main>
       <!-- main-area-end -->
